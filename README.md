@@ -1,12 +1,12 @@
-# 🛒 API Ventas - Cadena de Supermercados
+# API Ventas - Cadena de Supermercados
 
 Sistema de gestión de ventas para cadena de supermercados desarrollado con Spring Boot.
 
-## 📋 Descripción
+## Descripción
 
 API REST para la gestión de ventas, productos, sucursales y estadísticas de una cadena de supermercados. Implementa arquitectura en capas con patrón DTO y cálculo de estadísticas usando Java Streams.
 
-## 🚀 Tecnologías
+## Tecnologías
 
 - **Java 17**
 - **Spring Boot 3.5.7**
@@ -16,7 +16,7 @@ API REST para la gestión de ventas, productos, sucursales y estadísticas de un
 - **Lombok**
 - **Gradle**
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 src/main/java/com/isaacCompany/PruebaTecSupermercado/
@@ -29,7 +29,7 @@ src/main/java/com/isaacCompany/PruebaTecSupermercado/
 └── exception/         # Manejo de excepciones
 ```
 
-## 🗄️ Modelo de Datos
+## Modelo de Datos
 
 ### Entidades Principales
 
@@ -44,7 +44,7 @@ src/main/java/com/isaacCompany/PruebaTecSupermercado/
 - `Venta` → `DetalleVenta` (OneToMany)
 - `DetalleVenta` → `Producto` (ManyToOne)
 
-## 🔧 Instalación y Ejecución
+## Instalación y Ejecución
 
 ### Prerrequisitos
 
@@ -73,7 +73,7 @@ cd PruebaTecSupermercado
 http://localhost:8080
 ```
 
-## 📡 Endpoints
+## Endpoints
 
 ### Productos
 
@@ -108,13 +108,13 @@ http://localhost:8080
 |--------|----------|-------------|
 | GET | `/api/estadisticas/producto-mas-vendido` | Producto más vendido |
 
-## 📊 Endpoint de Estadísticas - Producto Más Vendido
+## Endpoint de Estadísticas - Producto Más Vendido
 
 Este endpoint calcula el producto más vendido utilizando **Java Streams** y filtra solo las ventas con estado `REGISTRADA` (excluye ventas anuladas).
 
 ### Casos de Uso
 
-#### 1️⃣ Sin filtros (todos los productos de todas las sucursales y fechas)
+#### Sin filtros (todos los productos de todas las sucursales y fechas)
 
 ```http
 GET http://localhost:8080/api/estadisticas/producto-mas-vendido
@@ -132,7 +132,7 @@ GET http://localhost:8080/api/estadisticas/producto-mas-vendido
 
 ---
 
-#### 2️⃣ Filtrado por sucursal
+#### Filtrado por sucursal
 
 ```http
 GET http://localhost:8080/api/estadisticas/producto-mas-vendido?sucursalId=1
@@ -152,7 +152,7 @@ GET http://localhost:8080/api/estadisticas/producto-mas-vendido?sucursalId=1
 
 ---
 
-#### 3️⃣ Filtrado por fecha
+#### Filtrado por fecha
 
 ```http
 GET http://localhost:8080/api/estadisticas/producto-mas-vendido?fecha=2025-09-09
@@ -172,7 +172,7 @@ GET http://localhost:8080/api/estadisticas/producto-mas-vendido?fecha=2025-09-09
 
 ---
 
-#### 4️⃣ Filtrado por fecha Y sucursal
+#### Filtrado por fecha Y sucursal
 
 ```http
 GET http://localhost:8080/api/estadisticas/producto-mas-vendido?fecha=2025-09-09&sucursalId=1
@@ -200,7 +200,7 @@ Si no existen ventas que cumplan los criterios de filtrado:
 HTTP/1.1 204 No Content
 ```
 
-## 🧪 Ejemplos de Uso
+## Ejemplos de Uso
 
 ### Crear un Producto
 
@@ -252,7 +252,7 @@ Content-Type: application/json
 
 
 
-## 🎯 Características Destacadas
+## Características Destacadas
 
 - ✅ **Enum EstadoVenta**: Type-safe para estados de venta (REGISTRADA/ANULADA)
 - ✅ **Cálculo con Streams**: Estadísticas calculadas usando programación funcional
@@ -261,7 +261,7 @@ Content-Type: application/json
 - ✅ **Soft Delete**: Campo `borradoLogico` para eliminación lógica
 - ✅ **Filtros Opcionales**: Endpoints flexibles con query parameters
 
-## 📝 Notas Técnicas
+## Notas Técnicas
 
 ### Estados de Venta
 
@@ -278,10 +278,10 @@ El servicio de estadísticas utiliza Java Streams para:
 4. Sumar cantidades vendidas
 5. Encontrar el máximo
 
-## 👨‍💻 Autor
+## Autor
 
 Isaac - Prueba Técnica Supermercado
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de uso educativo y de demostración.
