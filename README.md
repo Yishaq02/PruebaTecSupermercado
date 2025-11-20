@@ -202,34 +202,6 @@ HTTP/1.1 204 No Content
 
 ## 🧪 Ejemplos de Uso
 
-### Crear una Venta
-
-```http
-POST http://localhost:8080/api/ventas
-Content-Type: application/json
-
-{
-    "fecha": "2025-11-20",
-    "estado": "REGISTRADA",
-    "idSucursal": 1,
-    "detalle": [
-        {
-            "nombreProd": "Naranjas",
-            "cantProd": 10,
-            "precio": 1500.0,
-            "subtotal": 15000.0
-        },
-        {
-            "nombreProd": "Manzanas",
-            "cantProd": 5,
-            "precio": 2000.0,
-            "subtotal": 10000.0
-        }
-    ],
-    "total": 25000.0
-}
-```
-
 ### Crear un Producto
 
 ```http
@@ -255,6 +227,30 @@ Content-Type: application/json
     "direccion": "Av. Principal 123"
 }
 ```
+
+### Crear una Venta
+
+```http
+POST http://localhost:8080/api/ventas
+Content-Type: application/json
+
+{
+    "fecha": "2025-11-20",
+    "estado": "REGISTRADA",
+    "idSucursal": 1,
+    "detalle": [
+        {
+            "nombreProd": "Naranjas",
+            "cantProd": 10,
+            "precio": 1500.0,
+            "subtotal": 15000.0
+        }
+    ],
+    "total": 15000.0
+}
+```
+
+
 
 ## 🎯 Características Destacadas
 
