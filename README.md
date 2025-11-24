@@ -254,12 +254,12 @@ Content-Type: application/json
 
 ## Características Destacadas
 
-- ✅ **Enum EstadoVenta**: Type-safe para estados de venta (REGISTRADA/ANULADA)
-- ✅ **Cálculo con Streams**: Estadísticas calculadas usando programación funcional
-- ✅ **Arquitectura en Capas**: Separación clara de responsabilidades
-- ✅ **DTOs**: Desacoplamiento entre capa de presentación y modelo de datos
-- ✅ **Soft Delete**: Campo `borradoLogico` para eliminación lógica
-- ✅ **Filtros Opcionales**: Endpoints flexibles con query parameters
+-  **Enum EstadoVenta**: Type-safe para estados de venta (REGISTRADA/ANULADA)
+-  **Cálculo con Streams**: Estadísticas calculadas usando programación funcional
+-  **Arquitectura en Capas**: Separación clara de responsabilidades
+-  **DTOs**: Desacoplamiento entre capa de presentación y modelo de datos
+-  **Soft Delete**: Campo `borradoLogico` para eliminación lógica
+-  **Filtros Opcionales**: Endpoints flexibles con query parameters
 
 ## Notas Técnicas
 
