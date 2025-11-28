@@ -35,3 +35,28 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Environment Variables ###
+.env
+.env.local
+.env.*.local
+*.env
+
+### Docker ###
+docker-compose.override.yml
+.dockerignore
+
+### Logs ###
+*.log
+logs/
+
+### Database ###
+*.db
+*.sqlite
+*.sqlite3
+
+### Sensitive Data ###
+application-local.properties
+application-dev.properties
+secrets/
+credentials/
