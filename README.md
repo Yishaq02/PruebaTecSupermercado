@@ -123,12 +123,13 @@ GET http://localhost:8080/api/estadisticas/producto-mas-vendido
 **Respuesta:**
 ```json
 {
-    "productoId": 1,
-    "nombreProducto": "Naranjas",
-    "categoria": "Frutas",
-    "cantidadTotal": 150
+    "productoId": 2,
+    "nombreProducto": "Coca Cola 1L.",
+    "categoria": "Bebidas",
+    "cantidadTotal": 100
 }
 ```
+<img width="1760" height="691" alt="Captura de pantalla 2025-11-26 080711" src="https://github.com/user-attachments/assets/136b65e9-fd91-45c7-91b2-38c99d0ee49e" />
 
 ---
 
@@ -142,15 +143,18 @@ GET http://localhost:8080/api/estadisticas/producto-mas-vendido?sucursalId=1
 ```json
 {
     "productoId": 2,
-    "nombreProducto": "Manzanas",
-    "categoria": "Frutas",
-    "cantidadTotal": 85
+    "nombreProducto": "Coca Cola 1L.",
+    "categoria": "Bebidas",
+    "cantidadTotal": 100
 }
 ```
 
 **Descripción:** Retorna el producto más vendido únicamente en la sucursal con ID 1.
 
 ---
+
+<img width="1758" height="722" alt="Captura de pantalla 2025-11-26 080740" src="https://github.com/user-attachments/assets/d18152e3-e2fb-4a68-b2c6-cfb842cfbe4a" />
+
 
 #### Filtrado por fecha
 
@@ -161,16 +165,18 @@ GET http://localhost:8080/api/estadisticas/producto-mas-vendido?fecha=2025-09-09
 **Respuesta:**
 ```json
 {
-    "productoId": 3,
-    "nombreProducto": "Leche",
-    "categoria": "Lácteos",
-    "cantidadTotal": 120
+    "productoId": 2,
+    "nombreProducto": "Coca Cola 1L.",
+    "categoria": "Bebidas",
+    "cantidadTotal": 100
 }
 ```
 
 **Descripción:** Retorna el producto más vendido en la fecha específica (formato: `yyyy-MM-dd`).
 
 ---
+
+<img width="1766" height="724" alt="Captura de pantalla 2025-11-26 080758" src="https://github.com/user-attachments/assets/77932100-ee6c-4001-b545-64e3815bbb6a" />
 
 #### Filtrado por fecha Y sucursal
 
@@ -183,14 +189,16 @@ GET http://localhost:8080/api/estadisticas/producto-mas-vendido?fecha=2025-09-09
 {
     "productoId": 1,
     "nombreProducto": "Naranjas",
-    "categoria": "Frutas",
-    "cantidadTotal": 45
+    "categoria": "Frutas y Verduras",
+    "cantidadTotal": 10
 }
 ```
 
 **Descripción:** Retorna el producto más vendido en la fecha específica y sucursal específica.
 
 ---
+
+<img width="1760" height="702" alt="Captura de pantalla 2025-11-26 080817" src="https://github.com/user-attachments/assets/2d3f646c-ab29-4ed3-bd10-efa4cd222eff" />
 
 ### Respuesta cuando no hay datos
 
@@ -254,12 +262,12 @@ Content-Type: application/json
 
 ## Características Destacadas
 
-- ✅ **Enum EstadoVenta**: Type-safe para estados de venta (REGISTRADA/ANULADA)
-- ✅ **Cálculo con Streams**: Estadísticas calculadas usando programación funcional
-- ✅ **Arquitectura en Capas**: Separación clara de responsabilidades
-- ✅ **DTOs**: Desacoplamiento entre capa de presentación y modelo de datos
-- ✅ **Soft Delete**: Campo `borradoLogico` para eliminación lógica
-- ✅ **Filtros Opcionales**: Endpoints flexibles con query parameters
+-  **Enum EstadoVenta**: Type-safe para estados de venta (REGISTRADA/ANULADA)
+-  **Cálculo con Streams**: Estadísticas calculadas usando programación funcional
+-  **Arquitectura en Capas**: Separación clara de responsabilidades
+-  **DTOs**: Desacoplamiento entre capa de presentación y modelo de datos
+-  **Soft Delete**: Campo `borradoLogico` para eliminación lógica
+-  **Filtros Opcionales**: Endpoints flexibles con query parameters
 
 ## Notas Técnicas
 
