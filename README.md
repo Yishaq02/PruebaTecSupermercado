@@ -11,8 +11,8 @@ API REST para la gestión de ventas, productos, sucursales y estadísticas de un
 - **Java 17**
 - **Spring Boot 3.5.7**
 - **Spring Data JPA**
-- **H2 Database** (desarrollo)
-- **MySQL** (producción)
+- **PostgreSQL** (base de datos principal)
+- **Docker & Docker Compose** (containerización)
 - **Lombok**
 - **Gradle**
 
@@ -48,18 +48,104 @@ src/main/java/com/isaacCompany/PruebaTecSupermercado/
 
 ### Prerrequisitos
 
-- JDK 17 o superior
+- **Docker** y **Docker Compose** instalados
+- JDK 17 o superior (solo si ejecutas sin Docker)
 - Gradle (incluido con wrapper)
 
-### Pasos
+### 🐳 Opción 1: Ejecutar con Docker Compose (Recomendado)
 
-1. **Clonar el repositorio**
+Esta es la forma más rápida y sencilla de ejecutar el proyecto con todas sus dependencias.
+
+#### 1. Clonar el repositorio
+
 ```bash
 git clone <url-del-repositorio>
 cd PruebaTecSupermercado
 ```
 
-2. **Ejecutar la aplicación**
+#### 2. Configurar variables de entorno
+
+Crea un archivo `.env` en la raíz del proyecto basándote en `.env.example`:
+
+```bash
+# Copiar el archivo de ejemplo
+cp .env.example .env
+```
+
+Edita el archivo `.env` con tus credenciales:
+
+```env
+# Database Configuration
+DB_URL=jdbc:postgresql://db:5432/supermercadoDB
+DB_USERNAME=postgres
+DB_PASSWORD=tu_contraseña_segura
+DB_PORT=5432
+DB_DIALECT=org.hibernate.dialect.PostgreSQLDialect
+
+# Application Configuration
+APP_PORT=8080
+```
+
+> ⚠️ **Importante**: El archivo `.env` contiene información sensible y **NO** debe subirse a Git. Ya está incluido en `.gitignore`.
+
+#### 3. Construir y ejecutar los contenedores
+
+```bash
+# Construir y levantar los servicios en segundo plano
+docker-compose up --build -d
+
+# Ver los logs de la aplicación
+docker-compose logs -f app
+
+# Ver los logs de la base de datos
+docker-compose logs -f db
+```
+
+#### 4. Verificar que todo esté funcionando
+
+```bash
+# Ver el estado de los contenedores
+docker-compose ps
+
+# Deberías ver dos contenedores corriendo:
+# - supermercado-app (aplicación Spring Boot)
+# - supermercado-db (PostgreSQL)
+```
+
+#### 5. La API estará disponible en:
+
+```
+http://localhost:8080
+
+```
+
+
+### 💻 Opción 2: Ejecutar localmente (sin Docker)
+
+Si prefieres ejecutar la aplicación sin Docker, necesitarás tener PostgreSQL instalado localmente.
+
+#### 1. Instalar PostgreSQL
+
+Descarga e instala PostgreSQL desde [postgresql.org](https://www.postgresql.org/download/)
+
+#### 2. Crear la base de datos
+
+```sql
+CREATE DATABASE supermercadoDB;
+```
+
+#### 3. Configurar variables de entorno
+
+Actualiza el archivo `.env` con la URL de tu PostgreSQL local:
+
+```env
+DB_URL=jdbc:postgresql://localhost:5432/supermercadoDB
+DB_USERNAME=postgres
+DB_PASSWORD=tu_contraseña
+```
+
+#### 4. Ejecutar la aplicación
+
 ```bash
 # Windows
 .\gradlew.bat bootRun
@@ -68,10 +154,39 @@ cd PruebaTecSupermercado
 ./gradlew bootRun
 ```
 
-3. **La API estará disponible en:**
+#### 5. La API estará disponible en:
+
 ```
 http://localhost:8080
 ```
+
+---
+
+## 🐋 Arquitectura Docker
+
+El proyecto utiliza Docker Compose para orquestar dos servicios:
+
+### Servicios
+
+1. **supermercado-app**: Aplicación Spring Boot
+   - Puerto: `8080:8080`
+   - Imagen: `springio/gs-spring-boot-docker`
+   - Depende de: `supermercado-db`
+
+2. **supermercado-db**: Base de datos PostgreSQL
+   - Puerto: `5432:5432`
+   - Imagen: `postgres:15-alpine`
+   - Volumen persistente: `postgres-data`
+
+### Red
+
+Los contenedores se comunican a través de una red bridge personalizada llamada `supermercado-network`, lo que permite que la aplicación se conecte a la base de datos usando el nombre del servicio (`db`) en lugar de `localhost`.
+
+### Persistencia de Datos
+
+Los datos de PostgreSQL se almacenan en un volumen Docker llamado `postgres-data`, lo que garantiza que los datos persistan incluso si los contenedores se eliminan.
+
+---
 
 ## Endpoints
 
