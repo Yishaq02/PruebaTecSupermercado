@@ -11,8 +11,8 @@ API REST para la gestión de ventas, productos, sucursales y estadísticas de un
 - **Java 17**
 - **Spring Boot 3.5.7**
 - **Spring Data JPA**
-- **PostgreSQL** (base de datos principal)
-- **Docker & Docker Compose** (containerización)
+- **PostgreSQL** 
+- **Docker & Docker Compose** 
 - **Lombok**
 - **Gradle**
 
