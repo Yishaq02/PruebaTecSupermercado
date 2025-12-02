@@ -6,15 +6,24 @@ Sistema de gestión de ventas para cadena de supermercados desarrollado con Spri
 
 API REST para la gestión de ventas, productos, sucursales y estadísticas de una cadena de supermercados. Implementa arquitectura en capas con patrón DTO y cálculo de estadísticas usando Java Streams.
 
-## Tecnologías
+## Stack Tecnológico
 
-- **Java 17**
-- **Spring Boot 3.5.7**
-- **Spring Data JPA**
-- **PostgreSQL** (base de datos principal)
-- **Docker & Docker Compose** (containerización)
-- **Lombok**
-- **Gradle**
+![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2-green?style=for-the-badge&logo=spring-boot)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue?style=for-the-badge&logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker)
+![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger)
+![JUnit5](https://img.shields.io/badge/Testing-JUnit5-25A162?style=for-the-badge&logo=junit5)
+![Mockito](https://img.shields.io/badge/Mocking-Mockito-yellow?style=for-the-badge)
+
+- **Lenguaje**: Java 17
+- **Framework**: Spring Boot 3
+- **Base de Datos**: PostgreSQL
+- **ORM**: Hibernate / JPA
+- **Mappers**: MapStruct (Entidad <-> DTO)
+- **Testing**: JUnit 5, Mockito
+- **Documentación**: SpringDoc (Swagger UI)
+- **DevOps**: Docker, Docker Compose
 
 ## Estructura del Proyecto
 
