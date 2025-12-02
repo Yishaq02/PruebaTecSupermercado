@@ -61,14 +61,14 @@ src/main/java/com/isaacCompany/PruebaTecSupermercado/
 - JDK 17 o superior (solo si ejecutas sin Docker)
 - Gradle (incluido con wrapper)
 
-### 🐳 Opción 1: Ejecutar con Docker Compose (Recomendado)
+### Opción 1: Ejecutar con Docker Compose
 
 Esta es la forma más rápida y sencilla de ejecutar el proyecto con todas sus dependencias.
 
 #### 1. Clonar el repositorio
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/Yishaq02/PruebaTecSupermercado.git
 cd PruebaTecSupermercado
 ```
 
@@ -129,7 +129,7 @@ http://localhost:8080
 ```
 
 
-### 💻 Opción 2: Ejecutar localmente (sin Docker)
+### Opción 2: Ejecutar localmente (sin Docker)
 
 Si prefieres ejecutar la aplicación sin Docker, necesitarás tener PostgreSQL instalado localmente.
 
@@ -169,33 +169,6 @@ DB_PASSWORD=tu_contraseña
 http://localhost:8080
 ```
 
----
-
-## 🐋 Arquitectura Docker
-
-El proyecto utiliza Docker Compose para orquestar dos servicios:
-
-### Servicios
-
-1. **supermercado-app**: Aplicación Spring Boot
-   - Puerto: `8080:8080`
-   - Imagen: `springio/gs-spring-boot-docker`
-   - Depende de: `supermercado-db`
-
-2. **supermercado-db**: Base de datos PostgreSQL
-   - Puerto: `5432:5432`
-   - Imagen: `postgres:15-alpine`
-   - Volumen persistente: `postgres-data`
-
-### Red
-
-Los contenedores se comunican a través de una red bridge personalizada llamada `supermercado-network`, lo que permite que la aplicación se conecte a la base de datos usando el nombre del servicio (`db`) en lugar de `localhost`.
-
-### Persistencia de Datos
-
-Los datos de PostgreSQL se almacenan en un volumen Docker llamado `postgres-data`, lo que garantiza que los datos persistan incluso si los contenedores se eliminan.
-
----
 
 ## Endpoints
 
