@@ -9,20 +9,18 @@ API REST para la gestión de ventas, productos, sucursales y estadísticas de un
 ## Stack Tecnológico
 
 ![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2-green?style=for-the-badge&logo=spring-boot)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-green?style=for-the-badge&logo=spring-boot)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue?style=for-the-badge&logo=postgresql)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker)
-![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger)
-![JUnit5](https://img.shields.io/badge/Testing-JUnit5-25A162?style=for-the-badge&logo=junit5)
-![Mockito](https://img.shields.io/badge/Mocking-Mockito-yellow?style=for-the-badge)
+![Gradle](https://img.shields.io/badge/Gradle-8+-02303A?style=for-the-badge&logo=gradle)
+![Lombok](https://img.shields.io/badge/Lombok-Enabled-BC4521?style=for-the-badge&logo=lombok)
 
 - **Lenguaje**: Java 17
-- **Framework**: Spring Boot 3
+- **Framework**: Spring Boot 3.5.7
 - **Base de Datos**: PostgreSQL
-- **ORM**: Hibernate / JPA
-- **Mappers**: MapStruct (Entidad <-> DTO)
-- **Testing**: JUnit 5, Mockito
-- **Documentación**: SpringDoc (Swagger UI)
+- **ORM**: Spring Data JPA / Hibernate
+- **Build Tool**: Gradle
+- **Utilidades**: Lombok
 - **DevOps**: Docker, Docker Compose
 
 ## Estructura del Proyecto
